@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from .models import Product
 
@@ -5,11 +6,12 @@ from .models import Product
 
 
 def all_products(request):
-    """Return Products and searching """
+    """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
 
     context = {
         'products': products,
     }
-    return render(request, 'products/products.html', context)
+
+    return render(request, 'products.html', context)
